@@ -1,0 +1,45 @@
+{
+  "query": "SELECT * FROM newsletter_subscribers LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user eAJaRC4JiwdQ7mv.root --database QYrRxbjy3cbmCoXnjcPoqF --execute SELECT * FROM newsletter_subscribers LIMIT 10;",
+  "rows": [
+    {
+      "id": "1",
+      "email": "test-1768998013681@example.com",
+      "subscribedAt": "2026-01-21 12:20:13",
+      "unsubscribedAt": "NULL",
+      "isActive": "1"
+    },
+    {
+      "id": "2",
+      "email": "duplicate-1768998013826@example.com",
+      "subscribedAt": "2026-01-21 12:20:13",
+      "unsubscribedAt": "NULL",
+      "isActive": "1"
+    },
+    {
+      "id": "4",
+      "email": "test@example.com",
+      "subscribedAt": "2026-01-21 12:20:36",
+      "unsubscribedAt": "NULL",
+      "isActive": "1"
+    },
+    {
+      "id": "5",
+      "email": "test2@example.com",
+      "subscribedAt": "2026-01-21 12:21:17",
+      "unsubscribedAt": "NULL",
+      "isActive": "1"
+    },
+    {
+      "id": "6",
+      "email": "jesus@harmony432.com",
+      "subscribedAt": "2026-01-21 12:22:27",
+      "unsubscribedAt": "NULL",
+      "isActive": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\temail\tsubscribedAt\tunsubscribedAt\tisActive\n1\ttest-1768998013681@example.com\t2026-01-21 12:20:13\tNULL\t1\n2\tduplicate-1768998013826@example.com\t2026-01-21 12:20:13\tNULL\t1\n4\ttest@example.com\t2026-01-21 12:20:36\tNULL\t1\n5\ttest2@example.com\t2026-01-21 12:21:17\tNULL\t1\n6\tjesus@harmony432.com\t2026-01-21 12:22:27\tNULL\t1\n",
+  "stderr": "",
+  "execution_time_ms": 91
+}
