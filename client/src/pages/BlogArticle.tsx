@@ -1,274 +1,314 @@
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
+import { ArrowLeft, ArrowRight, Share2 } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function BlogArticle() {
   const [, setLocation] = useLocation();
 
+  // SEO Meta Tags
+  const seoData = {
+    title: "Hicimos una prueba ciega 432 vs 440: resultados y qué aprendimos (sin humo)",
+    description: "Prueba ciega A/B comparando 432 Hz vs 440 Hz. Resultados reales, metodología justa y conclusiones honestas sobre la percepción de afinación.",
+    image: "https://harmony432.es/blog-article-1-hero.jpg",
+    url: "https://harmony432.es/blog/prueba-ciega-432-vs-440",
+    canonical: "https://harmony432.es/blog/prueba-ciega-432-vs-440",
+    publishedDate: "2026-01-22",
+    modifiedDate: "2026-01-22",
+    richSnippets: {
+      headline: "Hicimos una prueba ciega 432 vs 440: resultados y qué aprendimos (sin humo)",
+      description: "Prueba ciega A/B comparando 432 Hz vs 440 Hz. Resultados reales, metodología justa y conclusiones honestas sobre la percepción de afinación.",
+      image: "https://harmony432.es/blog-article-1-hero.jpg",
+      datePublished: "2026-01-22",
+      dateModified: "2026-01-22",
+      author: "Harmony432",
+    },
+  };
+
+  // JSON-LD Schema
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Hicimos una prueba ciega 432 vs 440: resultados y qué aprendimos (sin humo)",
+    "description": "Prueba ciega A/B comparando 432 Hz vs 440 Hz. Resultados reales, metodología justa y conclusiones honestas sobre la percepción de afinación.",
+    "image": "/blog-article-1-hero.jpg",
+    "datePublished": "2026-01-22",
+    "dateModified": "2026-01-22",
+    "author": {
+      "@type": "Organization",
+      "name": "Harmony432"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Harmony432",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/images/harmony432-logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harmony432.manus.space/blog/prueba-ciega-432-vs-440"
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <div className="bg-card border-b border-border sticky top-0 z-40">
-        <div className="container py-4 flex items-center justify-between">
-          <button
-            onClick={() => setLocation("/")}
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            ← Volver a Inicio
+    <>
+      <SEOHead
+        title={seoData.title}
+        description={seoData.description}
+        image={seoData.image}
+        url={seoData.url}
+        canonical={seoData.canonical}
+        publishedDate={seoData.publishedDate}
+        modifiedDate={seoData.modifiedDate}
+        richSnippets={seoData.richSnippets}
+      />
+      <div className="min-h-screen bg-gradient-to-b from-slate-950 via-purple-950 to-slate-950 text-foreground overflow-hidden">
+        {/* Animated background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-purple-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-1/2 right-10 w-96 h-96 bg-blue-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
+      </div>
+
+      {/* JSON-LD Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify(jsonLd)}
+      </script>
+
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-purple-500/30">
+        <div className="container flex items-center justify-between py-4">
+          <button onClick={() => setLocation("/blog")} className="flex items-center gap-2 text-purple-200 hover:text-purple-100 transition-colors">
+            <ArrowLeft className="w-4 h-4" />
+            Volver al Blog
           </button>
-          <h1 className="text-lg font-bold text-foreground">Harmony432 Blog</h1>
-          <div className="w-24" />
+          <span className="text-lg font-bold text-purple-100">Harmony432 Blog</span>
+          <div className="w-32" />
         </div>
+      </nav>
+
+      {/* Hero Image */}
+      <div className="relative h-96 md:h-[500px] overflow-hidden">
+        <img
+          src="/blog-article-1-hero.jpg"
+          alt="Prueba ciega 432 vs 440 Hz"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
       </div>
 
       {/* Article Content */}
-      <article className="container py-12 max-w-3xl mx-auto">
+      <article className="container py-12 max-w-3xl mx-auto relative z-10">
         <div className="space-y-8">
-          {/* Title */}
-          <div className="space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
+          {/* Header */}
+          <header className="space-y-4 border-b border-purple-500/20 pb-8">
+            <h1 className="text-4xl md:text-5xl font-bold text-purple-100 leading-tight">
               Hicimos una prueba ciega 432 vs 440: resultados y qué aprendimos (sin humo)
             </h1>
-            <p className="text-lg text-muted-foreground">
-              Hay un debate eterno entre músicos: "432 suena mejor", "no cambia nada", "es puro placebo"…
-              En vez de discutirlo, hicimos algo más útil: una prueba ciega (A/B) con el mínimo de rigor y la máxima honestidad.
-            </p>
-          </div>
+            <div className="flex items-center gap-4 text-sm text-purple-300">
+              <span>📅 22 de Enero, 2026</span>
+              <span>⏱️ 8 min lectura</span>
+            </div>
+          </header>
 
           {/* Introduction */}
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
-            <p>
-              No es un estudio científico con 500 personas, pero sí es una experiencia replicable que te puede dar una idea muy clara de dos cosas:
-            </p>
-            <ul className="list-disc list-inside space-y-2 ml-2">
-              <li>Qué tanto notas realmente el cambio</li>
-              <li>Cuándo es relevante musicalmente (y cuándo no)</li>
-            </ul>
-          </div>
-
-          {/* Section 1: Design */}
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold text-foreground">Qué probamos (diseño simple pero justo)</h2>
-            <p className="text-muted-foreground">
+            <p className="text-lg text-purple-100 leading-relaxed">
+              Hay un debate eterno entre músicos: "432 suena mejor", "no cambia nada", "es puro placebo"… En vez de discutirlo, hicimos algo más útil: una prueba ciega (A/B) con el mínimo de rigor y la máxima honestidad.
+            </p>
+          </section>
+
+          {/* Section 1 */}
+          <section className="space-y-4">
+            <h2 className="text-2xl font-bold text-purple-100">Qué probamos (diseño simple pero justo)</h2>
+            <p className="text-purple-100 leading-relaxed">
               <strong>Objetivo:</strong> Comparar la percepción entre música afinada a A=440 y la misma música en A=432 sin que la gente supiera cuál era cuál.
             </p>
-
-            <div className="space-y-3">
-              <h3 className="font-semibold text-foreground">Qué usamos:</h3>
-              <div className="bg-card border border-border rounded-lg p-4 space-y-2">
-                <p className="text-sm text-muted-foreground"><strong>3 fragmentos de 25–35 segundos cada uno:</strong></p>
-                <ul className="list-disc list-inside space-y-1 ml-2 text-sm text-muted-foreground">
-                  <li>Guitarra sola (acordes abiertos)</li>
-                  <li>Voz + guitarra</li>
-                  <li>Un pad/sinte sostenido (tipo drone)</li>
+            <div className="bg-card/30 backdrop-blur-sm border border-purple-500/20 rounded-lg p-6 space-y-4">
+              <div>
+                <h3 className="font-bold text-purple-100 mb-3">Qué usamos:</h3>
+                <ul className="space-y-2 text-purple-100 ml-4">
+                  <li className="flex gap-3">
+                    <span className="text-primary">•</span>
+                    <span><strong>3 fragmentos de 25–35 segundos:</strong> guitarra sola, voz + guitarra, pad/sinte sostenido</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-primary">•</span>
+                    <span><strong>Dos versiones por fragmento:</strong> A (440 Hz) y B (432 Hz, ~−31,8 cents)</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-primary">•</span>
+                    <span><strong>Regla clave:</strong> Nadie veía etiquetas; solo elegían cuál les gustaba más</span>
+                  </li>
                 </ul>
               </div>
-
-              <div className="bg-card border border-border rounded-lg p-4 space-y-2">
-                <p className="text-sm text-muted-foreground"><strong>Dos versiones por fragmento:</strong></p>
-                <ul className="list-disc list-inside space-y-1 ml-2 text-sm text-muted-foreground">
-                  <li>Versión A: referencia 440</li>
-                  <li>Versión B: referencia 432 (el cambio equivale a ~−31,8 cents, casi un tercio de semitono)</li>
-                </ul>
-              </div>
-
-              <p className="text-sm text-muted-foreground italic">
-                <strong>Regla clave:</strong> Nadie veía "A" o "B" como 432 o 440; solo elegían cuál les gustaba más.
-              </p>
             </div>
           </section>
 
-          {/* Section 2: Methodology */}
+          {/* Section 2 */}
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold text-foreground">Cómo lo hicimos (para que no hubiera "truco")</h2>
-            <p className="text-muted-foreground">
+            <h2 className="text-2xl font-bold text-purple-100">Cómo lo hicimos (para que no hubiera "truco")</h2>
+            <p className="text-purple-100 leading-relaxed">
               Para que la comparación fuera justa, intentamos que todo lo demás fuera igual:
             </p>
-
-            <div className="bg-card border border-border rounded-lg p-4 space-y-3">
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>✓ Mismo volumen aproximado</li>
-                <li>✓ Mismo fragmento musical</li>
-                <li>✓ Misma reproducción (mismo altavoz o auriculares por persona)</li>
+            <div className="bg-card/30 backdrop-blur-sm border border-purple-500/20 rounded-lg p-6 space-y-3">
+              <ul className="space-y-2 text-purple-100">
+                <li className="flex gap-3">
+                  <span className="text-primary">✓</span>
+                  <span>Mismo volumen aproximado</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">✓</span>
+                  <span>Mismo fragmento musical</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">✓</span>
+                  <span>Misma reproducción (mismo altavoz o auriculares)</span>
+                </li>
               </ul>
-
-              <div className="pt-2 border-t border-border">
-                <p className="font-semibold text-foreground text-sm mb-2">Dos rondas por fragmento:</p>
-                <ul className="space-y-1 text-sm text-muted-foreground">
-                  <li>• "Elige cuál te gusta más"</li>
-                  <li>• "¿Notas cuál está más grave?"</li>
+              <div className="pt-4 border-t border-purple-500/20">
+                <p className="font-bold text-purple-100 mb-2">Dos rondas por fragmento:</p>
+                <ul className="space-y-2 text-purple-100 ml-4">
+                  <li className="flex gap-3">
+                    <span className="text-primary">•</span>
+                    <span>"Elige cuál te gusta más"</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-primary">•</span>
+                    <span>"¿Notas cuál está más grave?"</span>
+                  </li>
                 </ul>
               </div>
-
-              <p className="text-sm text-muted-foreground italic pt-2">
-                Además, mezclamos el orden: a veces A era 440, a veces era 432. Eso evita que la gente "aprenda" un patrón.
-              </p>
             </div>
           </section>
 
-          {/* Section 3: Results */}
+          {/* Section 3 */}
           <section className="space-y-6">
-            <h2 className="text-2xl font-bold text-foreground">Resultados (lo que pasó de verdad)</h2>
+            <h2 className="text-2xl font-bold text-purple-100">Resultados (lo que pasó de verdad)</h2>
 
-            {/* Result 1 */}
-            <div className="space-y-3">
-              <h3 className="text-lg font-semibold text-foreground">1) Mucha gente sí notó que una versión estaba más grave… pero no siempre</h3>
-              <p className="text-muted-foreground">
-                En los fragmentos de voz y guitarra, bastantes personas dijeron:
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-purple-100">1) Mucha gente sí notó que una versión estaba más grave</h3>
+              <p className="text-purple-100 leading-relaxed">
+                En los fragmentos de voz y guitarra, bastantes personas dijeron: "Esta suena un poco más baja", "Esta se siente más suave", "Esta parece más oscura".
               </p>
-              <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 space-y-2">
-                <p className="text-sm text-foreground italic">"Esta suena un poco más baja"</p>
-                <p className="text-sm text-foreground italic">"Esta se siente más suave"</p>
-                <p className="text-sm text-foreground italic">"Esta parece más oscura"</p>
-              </div>
-              <p className="text-muted-foreground">
-                En cambio, con el pad/sinte, algunos no notaron nada hasta que les dijimos "una está más baja".
-              </p>
-              <p className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4">
-                <strong>Aprendizaje:</strong> El oído detecta mejor la diferencia cuando hay armónicos acústicos y "cuerpo" natural (voz/cuerdas) que cuando hay un timbre muy estable y sintético.
+              <p className="text-sm text-purple-100 italic border-l-4 border-primary pl-4">
+                <strong>Aprendizaje:</strong> El oído detecta mejor la diferencia cuando hay armónicos acústicos (voz/cuerdas) que con timbres sintéticos.
               </p>
             </div>
 
-            {/* Result 2 */}
-            <div className="space-y-3">
-              <h3 className="text-lg font-semibold text-foreground">2) La preferencia no fue "432 arrasa" (y esto es importante)</h3>
-              <p className="text-muted-foreground">
-                Lo más interesante: <strong>no hubo una victoria aplastante de 432.</strong>
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-purple-100">2) La preferencia no fue "432 arrasa"</h3>
+              <p className="text-purple-100 leading-relaxed">
+                Lo más interesante: <strong>no hubo una victoria aplastante de 432.</strong> En temas lentos, muchas prefirieron la versión más baja. En fragmentos brillantes, varios prefirieron 440.
               </p>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• En temas lentos/íntimos, muchas personas prefirieron la versión más baja.</li>
-                <li>• En fragmentos más "brillantes" o con energía, varios prefirieron 440.</li>
-              </ul>
-              <p className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4">
-                <strong>Aprendizaje:</strong> La preferencia parece depender más del estilo y la emoción del fragmento que de una "superioridad" universal de una afinación.
+              <p className="text-sm text-purple-100 italic border-l-4 border-primary pl-4">
+                <strong>Aprendizaje:</strong> La preferencia depende más del estilo y emoción que de una "superioridad universal".
               </p>
             </div>
 
-            {/* Result 3 */}
-            <div className="space-y-3">
-              <h3 className="text-lg font-semibold text-foreground">3) La frase más repetida fue: "me gusta porque se siente…"</h3>
-              
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-purple-100">3) La frase más repetida fue: "me gusta porque se siente…"</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-card border border-border rounded-lg p-4">
-                  <p className="font-semibold text-foreground text-sm mb-3">Cuando alguien eligió 432:</p>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>• "Más cálida"</li>
-                    <li>• "Más redonda"</li>
-                    <li>• "Menos agresiva"</li>
-                    <li>• "Más relajada"</li>
+                <div className="bg-card/30 backdrop-blur-sm border border-purple-500/20 rounded-lg p-4">
+                  <p className="font-bold text-purple-100 mb-3">Cuando alguien eligió 432:</p>
+                  <ul className="space-y-2 text-purple-100 ml-4">
+                    <li className="flex gap-2">
+                      <span className="text-primary">•</span>
+                      <span>"Más cálida"</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary">•</span>
+                      <span>"Más redonda"</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary">•</span>
+                      <span>"Menos agresiva"</span>
+                    </li>
                   </ul>
                 </div>
-                <div className="bg-card border border-border rounded-lg p-4">
-                  <p className="font-semibold text-foreground text-sm mb-3">Cuando alguien eligió 440:</p>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>• "Más viva"</li>
-                    <li>• "Más clara"</li>
-                    <li>• "Con más presencia"</li>
-                    <li>• "Me empuja más"</li>
+                <div className="bg-card/30 backdrop-blur-sm border border-purple-500/20 rounded-lg p-4">
+                  <p className="font-bold text-purple-100 mb-3">Cuando alguien eligió 440:</p>
+                  <ul className="space-y-2 text-purple-100 ml-4">
+                    <li className="flex gap-2">
+                      <span className="text-primary">•</span>
+                      <span>"Más viva"</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary">•</span>
+                      <span>"Más clara"</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary">•</span>
+                      <span>"Con más presencia"</span>
+                    </li>
                   </ul>
                 </div>
               </div>
-
-              <p className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4">
-                <strong>Aprendizaje:</strong> Mucha gente describe el cambio en términos de sensación (color, emoción), no como "está afinado o desafinado".
-              </p>
             </div>
           </section>
 
-          {/* Section 4: What We Didn't Learn */}
-          <section className="space-y-4 bg-card border border-border rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-foreground">Lo que NO aprendimos (y está bien decirlo)</h2>
-            <p className="text-muted-foreground">Esto <strong>NO</strong> demuestra que:</p>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>✗ 432 "cura" nada</li>
-              <li>✗ 440 sea "malo"</li>
-              <li>✗ Haya una afinación "correcta universal"</li>
-            </ul>
-            <div className="pt-4 border-t border-border">
-              <p className="text-muted-foreground">Lo que sí demuestra es algo más útil:</p>
-              <p className="text-lg font-semibold text-foreground mt-2">
-                👉 Hay un cambio audible y puede influir en la percepción, pero no siempre y no igual para todos.
-              </p>
-            </div>
-          </section>
-
-          {/* Section 5: DIY Test */}
+          {/* Section 4 */}
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold text-foreground">Si quieres repetir la prueba en tu casa (en 10 minutos)</h2>
-            <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 space-y-4">
-              <ol className="space-y-3 text-muted-foreground list-decimal list-inside">
-                <li>Elige un fragmento de 20–30 segundos (guitarra o voz ideal).</li>
-                <li>Ten dos versiones:
-                  <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
-                    <li>Una afinada a 440</li>
-                    <li>Otra a 432 (o convertida)</li>
-                  </ul>
+            <h2 className="text-2xl font-bold text-purple-100">Lo que NO aprendimos (y está bien decirlo)</h2>
+            <div className="bg-card/30 backdrop-blur-sm border border-purple-500/20 rounded-lg p-6 space-y-4">
+              <p className="text-purple-100">Esto <strong>NO</strong> demuestra que:</p>
+              <ul className="space-y-2 text-purple-100 ml-4">
+                <li className="flex gap-3">
+                  <span className="text-primary">✗</span>
+                  <span>432 "cura" nada</span>
                 </li>
-                <li>Ponlas al mismo volumen aproximado.</li>
-                <li>Reprodúcelas en orden aleatorio y apunta:
-                  <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
-                    <li>"Me gusta más A o B"</li>
-                    <li>"¿Cuál crees que está más grave?"</li>
-                  </ul>
+                <li className="flex gap-3">
+                  <span className="text-primary">✗</span>
+                  <span>440 sea "malo"</span>
                 </li>
-                <li>Repite con 2–3 fragmentos distintos.</li>
-              </ol>
-              <p className="text-sm italic pt-2 border-t border-primary/20">
-                <strong>Consejo:</strong> Si puedes, pide a otra persona que ponga las pistas para que tú no sepas cuál es cuál.
-              </p>
+                <li className="flex gap-3">
+                  <span className="text-primary">✗</span>
+                  <span>Haya una afinación "correcta universal"</span>
+                </li>
+              </ul>
+              <div className="pt-4 border-t border-purple-500/20">
+                <p className="text-purple-100 font-bold">Lo que sí demuestra:</p>
+                <p className="text-lg text-primary mt-2">
+                  👉 Hay un cambio audible y puede influir en la percepción, pero no siempre y no igual para todos.
+                </p>
+              </div>
             </div>
           </section>
 
-          {/* Section 6: Conclusion */}
-          <section className="space-y-4 bg-card border border-border rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-foreground">Conclusión honesta</h2>
-            <p className="text-muted-foreground">Después de la prueba, nuestra conclusión fue sencilla:</p>
-            <div className="space-y-2 mt-4">
-              <p className="text-foreground"><span className="text-green-500">✅</span> Sí, se nota (en muchos casos)</p>
-              <p className="text-foreground"><span className="text-green-500">✅</span> Sí, puede cambiar la sensación (sobre todo en voz y acústicos)</p>
-              <p className="text-foreground"><span className="text-red-500">❌</span> No es magia</p>
-              <p className="text-foreground"><span className="text-red-500">❌</span> No es universal</p>
-            </div>
-            <div className="pt-4 border-t border-border">
-              <p className="text-muted-foreground">
-                La afinación es una herramienta creativa más. A veces 432 te da un color que te gusta. Otras veces 440 te da el brillo que necesitas.
+          {/* CTA Section */}
+          <section className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 rounded-lg p-8 space-y-6 mt-12">
+            <div>
+              <h3 className="text-xl font-bold text-purple-100 mb-2">¿Quieres experimentar por ti mismo?</h3>
+              <p className="text-purple-100">
+                Usa nuestro afinador y conversor para comparar 432 Hz vs 440 Hz en tu música favorita.
               </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground" onClick={() => setLocation("/tuner")}>
+                Afinador de Precisión
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+              <Button size="lg" className="bg-primary/20 hover:bg-primary/30 text-primary-foreground border border-primary/50" onClick={() => setLocation("/converter")}>
+                Convertir Audio
+              </Button>
             </div>
           </section>
 
-          {/* CTA */}
-          <section className="space-y-4 bg-primary/10 border border-primary/20 rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-foreground">¿Quieres probarlo tú ahora mismo?</h2>
-            <p className="text-muted-foreground">
-              Si te apetece hacer tu propia prueba ciega, lo más cómodo es tener:
-            </p>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>• Un afinador con referencia ajustable (432/440)</li>
-              <li>• Un sintetizador para generar un tono base en 432</li>
-              <li>• Un conversor para crear una versión alternativa de un audio</li>
-            </ul>
-            <p className="font-semibold text-foreground pt-2">
-              Eso es exactamente lo que estamos construyendo en Harmony432.
-            </p>
-            <Button 
-              size="lg" 
-              className="mt-4 bg-primary hover:bg-primary/90"
-              onClick={() => setLocation("/tuner")}
-            >
-              Probar Harmony432 Ahora
+          {/* Navigation */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-between pt-8 border-t border-purple-500/20">
+            <Button variant="outline" className="border-purple-500/30 text-purple-100 hover:bg-purple-500/10" onClick={() => setLocation("/blog")}>
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Ver todos los artículos
             </Button>
-          </section>
-        </div>
-
-        {/* Back Button */}
-        <div className="mt-12 pt-8 border-t border-border">
-          <Button
-            variant="outline"
-            onClick={() => setLocation("/")}
-          >
-            ← Volver a Inicio
-          </Button>
+            <Button variant="outline" className="border-purple-500/30 text-purple-100 hover:bg-purple-500/10">
+              <Share2 className="w-4 h-4 mr-2" />
+              Compartir
+            </Button>
+          </div>
         </div>
       </article>
     </div>
+    </>
   );
 }

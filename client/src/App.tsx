@@ -22,12 +22,17 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import BlogArticle from "./pages/BlogArticle";
 import BlogArticle2 from "./pages/BlogArticle2";
 import BlogArticle3 from "./pages/BlogArticle3";
+import BlogArticle4 from "./pages/BlogArticle4";
+import BlogArticle5 from "./pages/BlogArticle5";
+import BlogArticle6 from "./pages/BlogArticle6";
+import About from "./pages/About";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/about"} component={About} />
       <Route path={"/tuner"} component={Tuner} />
       <Route path={"/converter"} component={Converter} />
       <Route path={"/synthesizer"} component={Synthesizer} />
@@ -48,8 +53,10 @@ function Router() {
       <Route path={"/blog/prueba-ciega-432-vs-440"} component={BlogArticle} />
       <Route path={"/blog/afinaciones-alternativas-432"} component={BlogArticle2} />
       <Route path={"/blog/evidencia-432-relaja"} component={BlogArticle3} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path={"/blog/historia-estandares-afinacion"} component={BlogArticle4} />
+      <Route path={"/blog/hz-vs-cents-explicado"} component={BlogArticle5} />
+      <Route path={"/blog/verdi-a-432-historia"} component={BlogArticle6} />
+      <Route path={"/404"} component={NotFound} />     {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
   );
