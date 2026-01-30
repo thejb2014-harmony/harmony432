@@ -135,18 +135,17 @@ export default function Blog() {
               className="group cursor-pointer"
               onClick={() => setLocation(post.slug)}
             >
-              {/* Image Container */}
+                            {/* Image Container */}
               <div className="relative overflow-hidden rounded-lg mb-4 h-48 md:h-56">
-  <img
-    src={post.image}
-    alt={post.title}
-    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-    onError={(e) => {
-      e.currentTarget.onerror = null;
-      e.currentTarget.src = "/blog-article-1-hero.jpg";
-    }}
-  />
-</div>
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = "/blog-article-1-hero.jpg";
+                  }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
