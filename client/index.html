@@ -5,28 +5,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>Harmony432 - Afinación 432 Hz | Afinador, Conversor y Sintetizador</title>
-    <meta name="description" content="Harmony432: Descubre la afinación 432 Hz con nuestro afinador de precisión, conversor de audio y sintetizador integrado. Temperamento Elíptico, soporte MIDI y herramientas profesionales para músicos." />
-    <meta name="keywords" content="432 Hz, afinación, temperamento elíptico, afinador, conversor de audio, sintetizador, MIDI, música, sonoterapia" />
+    <meta name="description" content="Afinador 432 Hz profesional: herramientas de afinación, conversor de audio y sintetizador MIDI." />
+    <meta name="keywords" content="afinador 432 Hz, afinación, conversor de audio, sintetizador MIDI" />
     <meta name="author" content="Harmony432" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="es" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://harmony432.manus.space/" />
+    <meta property="og:url" content="https://harmony432.es/" />
     <meta property="og:title" content="Harmony432 - Afinación 432 Hz | Herramientas Profesionales para Músicos" />
-    <meta property="og:description" content="Explora la frecuencia de la armonía universal. Afinador de precisión, conversor de audio 440Hz→432Hz, sintetizador con MIDI y análisis de espectro FFT." />
-    <meta property="og:image" content="/images/harmony432-logo.png" />
+    <meta property="og:description" content="Afinador 432 Hz profesional: herramientas de afinación, conversor de audio y sintetizador MIDI." />
+    <meta property="og:image" content="https://harmony432.es/images/harmony432-logo.png" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://harmony432.manus.space/" />
+    <meta property="twitter:url" content="https://harmony432.es/" />
     <meta property="twitter:title" content="Harmony432 - Afinación 432 Hz" />
-    <meta property="twitter:description" content="Descubre herramientas profesionales para afinación 432 Hz: afinador, conversor y sintetizador con soporte MIDI." />
-    <meta property="twitter:image" content="/images/harmony432-logo.png" />
+    <meta property="twitter:description" content="Afinador 432 Hz profesional: herramientas de afinación, conversor de audio y sintetizador MIDI." />
+    <meta property="twitter:image" content="https://harmony432.es/images/harmony432-logo.png" />
     
     <!-- Canonical -->
-    <link rel="canonical" href="https://harmony432.manus.space/" />
+    <link rel="canonical" href="https://harmony432.es/" />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,6 +40,95 @@
     <meta name="google-adsense-account" content="ca-pub-6070942246876695">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6070942246876695"
      crossorigin="anonymous"></script>
+    
+    <!-- Dynamic OG Meta Tags Script -->
+    <script>
+      const blogArticles = {
+        'origen-432hz-pitagoras': {
+          title: 'Origen de 432 Hz: Pitágoras, matemática y resonancia natural',
+          description: 'Historia completa de 432 Hz desde Pitágoras hasta hoy. Matemática, ciencia y por qué es diferente a 440 Hz.',
+          image: '/blog-post-1-hero.jpg'
+        },
+        'quinta-lobo-circulo-quintas': {
+          title: 'La Quinta del Lobo: el error de la afinación temperada que nadie quería',
+          description: 'Qué es la quinta del lobo, por qué existe en la afinación temperada y cómo 432 Hz lo resuelve.',
+          image: '/blog-post-2-hero.jpg'
+        },
+        '432hz-vs-440hz-cents': {
+          title: '432 Hz vs 440 Hz: diferencia en cents, percepción y ciencia',
+          description: 'Comparativa exacta entre 432 Hz y 440 Hz. Diferencia en cents, cómo se percibe y por qué importa.',
+          image: '/blog-post-3-hero.jpg'
+        },
+        'prueba-ciega-432-vs-440': {
+          title: 'Hicimos una prueba ciega 432 vs 440: resultados y qué aprendimos (sin humo)',
+          description: 'Prueba ciega A/B comparando 432 Hz vs 440 Hz. Resultados reales, metodología justa y conclusiones honestas.',
+          image: '/blog-article-1-hero.jpg'
+        },
+        'afinaciones-alternativas-432': {
+          title: 'Guía: afinación alternativa en guitarras (Drop, Open Tunings) + A=432 Hz',
+          description: 'Combina afinaciones alternativas con 432 Hz sin liarte. Tabla de referencia, soluciones prácticas.',
+          image: '/blog-article-2-hero.jpg'
+        },
+        'evidencia-432-relaja': {
+          title: '¿432 Hz relaja? Evidencia científica, estudios y qué dice la investigación',
+          description: 'Análisis de estudios científicos sobre 432 Hz y relajación. Qué dice la investigación real.',
+          image: '/blog-article-3-hero.jpg'
+        },
+        'historia-estandares-afinacion': {
+          title: 'Historia real de los estándares de afinación: 440 Hz no fue siempre el estándar',
+          description: 'Cómo 440 Hz se convirtió en estándar internacional. Política, industria y decisiones que cambiaron la música.',
+          image: '/blog-article-4-hero.jpg'
+        },
+        'hz-vs-cents-explicado': {
+          title: 'Hz vs Cents explicado fácil: diferencia musical y cómo medirla',
+          description: 'Diferencia entre Hz y cents. Cómo medir cambios de afinación y entender la precisión musical.',
+          image: '/blog-article-5-hero.jpg'
+        },
+        'verdi-a-432-historia': {
+          title: 'Verdi A=432: qué es y qué NO es (desmitificación histórica)',
+          description: 'La historia real de Verdi A=432. Contexto operístico italiano y por qué es importante.',
+          image: '/blog-article-6-hero.jpg'
+        }
+      };
+      
+      function updateMetaTags() {
+        const path = window.location.pathname;
+        const slug = path.split('/blog/')[1];
+        
+        if (slug && blogArticles[slug]) {
+          const article = blogArticles[slug];
+          const domain = 'https://harmony432.es';
+          const url = domain + path;
+          
+          updateMetaTag('og:title', article.title);
+          updateMetaTag('og:description', article.description);
+          updateMetaTag('og:image', domain + article.image);
+          updateMetaTag('og:url', url);
+          
+          updateMetaTag('twitter:title', article.title);
+          updateMetaTag('twitter:description', article.description);
+          updateMetaTag('twitter:image', domain + article.image);
+          
+          const canonical = document.querySelector('link[rel="canonical"]');
+          if (canonical) canonical.href = url;
+          
+          document.title = article.title + ' | Harmony432 Blog';
+        }
+      }
+      
+      function updateMetaTag(property, content) {
+        let tag = document.querySelector('meta[property="' + property + '"]');
+        if (!tag) {
+          tag = document.createElement('meta');
+          tag.setAttribute('property', property);
+          document.head.appendChild(tag);
+        }
+        tag.setAttribute('content', content);
+      }
+      
+      updateMetaTags();
+      window.addEventListener('popstate', updateMetaTags);
+    </script>
   </head>
 
   <body>
