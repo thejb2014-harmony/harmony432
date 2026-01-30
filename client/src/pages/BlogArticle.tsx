@@ -112,6 +112,15 @@ export default function BlogArticle() {
             </div>
           </header>
 
+          {/* Hero Image */}
+          <div className="w-full h-96 rounded-lg overflow-hidden shadow-2xl shadow-purple-500/20 border border-purple-500/20">
+            <img
+              src="/blog-article-1.jpg"
+              alt="Prueba ciega 432 vs 440"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
           {/* Introduction */}
           <section className="space-y-4">
             <p className="text-lg text-purple-100 leading-relaxed">

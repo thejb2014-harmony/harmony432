@@ -99,6 +99,15 @@ export default function BlogArticle2() {
             </div>
           </header>
 
+          {/* Hero Image */}
+          <div className="w-full h-96 rounded-lg overflow-hidden shadow-2xl shadow-purple-500/20 border border-purple-500/20">
+            <img
+              src="/blog-article-2.jpg"
+              alt="Guía de afinaciones alternativas"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
           {/* Introduction */}
           <section className="space-y-4">
             <p className="text-lg text-purple-100 leading-relaxed">
