@@ -71,7 +71,7 @@ const blogPosts: BlogPost[] = [
     id: "7",
     title: "Historia real de los estándares de afinación: por qué 440 Hz y por qué 432 Hz vuelve",
     excerpt: "La afinación A=440 Hz no siempre fue el estándar mundial. Descubre las decisiones políticas, industriales y técnicas que llevaron a 440 Hz.",
-    image: "/blog-historia-estandares.jpg",
+    image: "/blog-article-4-hero.jpg",
     slug: "/blog/historia-estandares-afinacion",
     date: "24 de Enero, 2026",
     readTime: "8 min",
@@ -80,7 +80,7 @@ const blogPosts: BlogPost[] = [
     id: "8",
     title: "Por qué 8 Hz no es 8 Hz en música. Hz vs cents explicado fácil",
     excerpt: "Una frase común es de 440 a 432 solo hay 8 Hz. Pero musicalmente está mal planteada. Aprende por qué usamos cents.",
-    image: "/blog-hz-vs-cents.jpg",
+    image: "/blog-article-5-hero.jpg",
     slug: "/blog/hz-vs-cents-explicado",
     date: "24 de Enero, 2026",
     readTime: "6 min",
@@ -89,7 +89,7 @@ const blogPosts: BlogPost[] = [
     id: "9",
     title: "Verdi A=432: qué es y qué NO es",
     excerpt: "Verdi A=432 es una etiqueta popular que se simplifica en mitos. Aquí dejamos claro qué parte es histórica y qué es interpretación moderna.",
-    image: "/blog-verdi-a432.jpg",
+    image: "/blog-article-6-hero.jpg",
     slug: "/blog/verdi-a-432-historia",
     date: "24 de Enero, 2026",
     readTime: "7 min",
@@ -137,11 +137,16 @@ export default function Blog() {
             >
               {/* Image Container */}
               <div className="relative overflow-hidden rounded-lg mb-4 h-48 md:h-56">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+  <img
+    src={post.image}
+    alt={post.title}
+    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+    onError={(e) => {
+      e.currentTarget.onerror = null;
+      e.currentTarget.src = "/blog-article-1-hero.jpg";
+    }}
+  />
+</div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
